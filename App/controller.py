@@ -25,6 +25,7 @@
  """
 
 import config as cf
+import time
 from App import model
 import csv
 
@@ -134,3 +135,16 @@ def servedRoutes(analyzer):
     """
     maxvert, maxdeg = model.servedRoutes(analyzer)
     return maxvert, maxdeg
+
+
+# ======================================
+# Funciones para medir tiempo y memoria
+# ======================================
+
+
+def getTime():
+    """
+    devuelve el instante tiempo de procesamiento en milisegundos
+    """
+    return float(time.perf_counter()*1000)
+
