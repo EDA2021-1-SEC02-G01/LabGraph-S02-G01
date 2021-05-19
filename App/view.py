@@ -138,13 +138,11 @@ def thread_cycle():
             msg = "Estación Base: BusStopCode-ServiceNo (Ej: 75009-10): "
             initialStation = input(msg)
             # toma de tiempo
-            tracemalloc.start()
             start_time = controller.getTime()
             # toma de tiempo
             optionFour(cont, initialStation)
             # toma de tiempo 
             stop_time = controller.getTime()
-            tracemalloc.stop()
             delta_time = stop_time - start_time
             # toma de tiempo
             print(f"Tiempo de ejecucion: {delta_time}")
@@ -155,8 +153,15 @@ def thread_cycle():
 
         elif int(inputs[0]) == 6:
             destStation = input("Estación destino (Ej: 15151-10): ")
+            # toma de tiempo
+            start_time = controller.getTime()
+            # toma de tiempo
             optionSix(cont, destStation)
-
+            # toma de tiempo 
+            stop_time = controller.getTime()
+            delta_time = stop_time - start_time
+            # toma de tiempo
+            print(f"Tiempo de ejecucion: {delta_time}")
         elif int(inputs[0]) == 7:
             optionSeven(cont)
 
